@@ -1,0 +1,498 @@
+/* ============================================================
+   styles.css
+   ------------------------------------------------------------
+   Custom styling for the Healthcare Patient Management System.
+   Bootstrap 5 handles the grid and components; this file adds
+   the sage green theme, spacing and small visual touches.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. COLOR PALETTE
+   ------------------------------------------------------------
+   All colors are defined once here so the whole system stays
+   consistent and is easy to re-theme later.
+   ------------------------------------------------------------ */
+
+:root {
+  --sage-900: #23423a;   /* darkest - headings */
+  --sage-800: #2f5a4b;   /* navbar */
+  --sage-700: #3f7561;   /* primary buttons */
+  --sage-600: #5a8f78;   /* hover */
+  --sage-400: #8fb5a4;   /* borders, icons */
+  --sage-200: #cfe2d8;   /* light borders */
+  --sage-100: #e4efe9;   /* card accents */
+  --sage-50:  #f2f8f5;   /* page background tint */
+
+  --ink:        #223029; /* main text */
+  --ink-muted:  #6b7f76; /* secondary text */
+  --surface:    #ffffff; /* cards */
+  --page-bg:    #f5f9f7; /* page background */
+
+  --success: #3f7561;
+  --warning: #b07d2b;
+  --danger:  #b04a44;
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  --shadow-sm: 0 1px 2px rgba(35, 66, 58, 0.06);
+  --shadow-md: 0 4px 16px rgba(35, 66, 58, 0.08);
+}
+
+/* ------------------------------------------------------------
+   2. BASE PAGE
+   ------------------------------------------------------------ */
+
+body {
+  background-color: var(--page-bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--sage-900);
+  font-weight: 600;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.page-subtitle {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.text-muted-sage {
+  color: var(--ink-muted);
+}
+
+/* ------------------------------------------------------------
+   3. NAVIGATION BAR
+   ------------------------------------------------------------ */
+
+.navbar-brand-sage {
+  background-color: var(--sage-800);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-brand-sage .navbar-brand {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.navbar-brand-sage .nav-link {
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navbar-brand-sage .nav-link:hover,
+.navbar-brand-sage .nav-link:focus {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.navbar-brand-sage .nav-link.active {
+  color: var(--sage-900);
+  background-color: #ffffff;
+}
+
+/* The small cross/plus logo mark next to the system name. */
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 0.6rem;
+  border-radius: 9px;
+  background-color: #ffffff;
+  color: var(--sage-800);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ------------------------------------------------------------
+   4. CARDS
+   ------------------------------------------------------------ */
+
+.card-sage {
+  background-color: var(--surface);
+  border: 1px solid var(--sage-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.card-sage .card-header {
+  background-color: var(--sage-50);
+  border-bottom: 1px solid var(--sage-200);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+  padding: 0.9rem 1.15rem;
+}
+
+.card-sage .card-body {
+  padding: 1.15rem;
+}
+
+/* ---- Dashboard summary cards ---- */
+
+.stat-card {
+  background-color: var(--surface);
+  border: 1px solid var(--sage-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.15rem;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background-color: var(--sage-100);
+  color: var(--sage-700);
+  margin-bottom: 0.75rem;
+}
+
+.stat-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--sage-900);
+}
+
+.stat-label {
+  color: var(--ink-muted);
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   5. BUTTONS
+   ------------------------------------------------------------ */
+
+.btn-brand {
+  background-color: var(--sage-700);
+  border-color: var(--sage-700);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background-color: var(--sage-600);
+  border-color: var(--sage-600);
+  color: #ffffff;
+}
+
+.btn-outline-brand {
+  border-color: var(--sage-400);
+  color: var(--sage-800);
+  background-color: transparent;
+  font-weight: 500;
+}
+
+.btn-outline-brand:hover,
+.btn-outline-brand:focus {
+  background-color: var(--sage-100);
+  border-color: var(--sage-600);
+  color: var(--sage-900);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--sage-400);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------
+   6. FORMS
+   ------------------------------------------------------------ */
+
+.form-label {
+  color: var(--sage-900);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.form-control,
+.form-select {
+  border: 1px solid var(--sage-200);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.75rem;
+  color: var(--ink);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--sage-600);
+  box-shadow: 0 0 0 0.2rem rgba(63, 117, 97, 0.15);
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: var(--sage-50);
+  color: var(--sage-800);
+  font-weight: 600;
+}
+
+.form-text {
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+}
+
+/* Required-field marker */
+.required-mark {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+/* Bootstrap validation colours adjusted to the theme */
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: var(--danger);
+}
+
+.invalid-feedback {
+  display: block;
+  font-size: 0.8rem;
+  min-height: 1rem;
+  color: var(--danger);
+}
+
+/* ------------------------------------------------------------
+   7. TABLES
+   ------------------------------------------------------------ */
+
+.table-sage {
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.table-sage thead th {
+  background-color: var(--sage-50);
+  color: var(--sage-900);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--sage-200);
+  white-space: nowrap;
+  padding: 0.75rem 0.9rem;
+}
+
+.table-sage tbody td {
+  border-bottom: 1px solid var(--sage-100);
+  color: var(--ink);
+  font-size: 0.92rem;
+  padding: 0.75rem 0.9rem;
+}
+
+.table-sage tbody tr:hover {
+  background-color: var(--sage-50);
+}
+
+/* Keeps short values such as dates and times on a single line. */
+.table-sage .nowrap {
+  white-space: nowrap;
+}
+
+/* The small rounded ID label, e.g. P001 */
+.id-chip {
+  display: inline-block;
+  background-color: var(--sage-100);
+  color: var(--sage-800);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 0.18rem 0.6rem;
+}
+
+/* ------------------------------------------------------------
+   8. STATUS BADGES
+   ------------------------------------------------------------ */
+
+.badge-status {
+  display: inline-block;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0.28rem 0.7rem;
+  white-space: nowrap;
+}
+
+.badge-scheduled {
+  background-color: #dbe9f5;
+  color: #2a5679;
+}
+
+.badge-completed {
+  background-color: var(--sage-100);
+  color: var(--sage-800);
+}
+
+.badge-cancelled {
+  background-color: #f6dedd;
+  color: #8f3a35;
+}
+
+.status-select {
+  min-width: 130px;
+  border-color: var(--sage-200);
+}
+
+/* ------------------------------------------------------------
+   9. ALERTS AND EMPTY STATES
+   ------------------------------------------------------------ */
+
+#alertArea .alert {
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+}
+
+#alertArea .alert-success {
+  background-color: var(--sage-100);
+  border-color: var(--sage-400);
+  color: var(--sage-900);
+}
+
+#alertArea .alert-danger {
+  background-color: #f8e6e5;
+  border-color: #e0b5b2;
+  color: #7d322d;
+}
+
+#alertArea .alert-warning {
+  background-color: #fbf1dd;
+  border-color: #e4cfa4;
+  color: #7a5518;
+}
+
+.alert-icon {
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+
+.empty-state {
+  color: var(--ink-muted);
+  padding: 2.25rem 1rem;
+  text-align: center;
+}
+
+.empty-state .empty-icon {
+  display: block;
+  margin: 0 auto 0.6rem;
+  color: var(--sage-400);
+}
+
+.empty-state .empty-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+/* ------------------------------------------------------------
+   10. PATIENT DETAILS MODAL
+   ------------------------------------------------------------ */
+
+.modal-header-sage {
+  background-color: var(--sage-50);
+  border-bottom: 1px solid var(--sage-200);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.25rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  color: var(--ink-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.detail-value {
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+@media (max-width: 575.98px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-value {
+    font-size: 1.7rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   11. SEARCH BAR
+   ------------------------------------------------------------ */
+
+.search-wrapper .input-group-text {
+  background-color: var(--sage-50);
+  border: 1px solid var(--sage-200);
+  border-right: none;
+  color: var(--sage-700);
+}
+
+.search-wrapper .form-control {
+  border-left: none;
+}
+
+/* ------------------------------------------------------------
+   12. FOOTER
+   ------------------------------------------------------------ */
+
+.site-footer {
+  border-top: 1px solid var(--sage-200);
+  color: var(--ink-muted);
+  font-size: 0.83rem;
+  margin-top: 3rem;
+  padding: 1.25rem 0;
+  text-align: center;
+}
